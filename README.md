@@ -73,7 +73,17 @@ Each command configuration function returns an object with the following options
 pluginExec({
   default: () => ({
     command: 'node',
-    args: ['./dist/server.js']
+    args: ['./dist/server.js'],
+    onlyOnWatch: true
+  })
+})
+```
+
+```typescript
+pluginExec({
+  production: () => ({
+    command: 'vercel',
+    args: ['deploy']
   })
 })
 ```
@@ -81,21 +91,29 @@ pluginExec({
 ### Environment-Specific Configuration
 
 ```typescript
-pluginExec({
-  environments: {
-    development: () => ({
-      command: 'node',
-      args: ['--inspect', './dist/server.js'],
-      env: { DEBUG: 'app:*' },
-      restartDelay: 1000
-    }),
-    production: () => ({
-      command: 'node',
-      args: ['./dist/server.js'],
-      env: { NODE_ENV: 'production' }
-    })
-  }
-})
+{
+    //...
+    environments: {
+        // ...
+        backend: { // <-- Ensure identical environment keys
+            //...
+            output: {
+                //...
+                target: 'node'
+            }
+        }
+    },
+    plugins: [
+        pluginExec({
+            environments: {
+                backend: () => ({ // <-- Ensure identical environment keys
+                    // ...
+                }),
+                // ...
+            }
+        })
+    ]
+}
 ```
 
 ## Environment Variables
