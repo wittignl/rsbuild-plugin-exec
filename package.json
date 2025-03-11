@@ -1,6 +1,6 @@
 {
   "name": "@wittignl/rsbuild-plugin-exec",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "author": {
     "name": "Wittig B.V.",
