@@ -1,0 +1,16 @@
+{
+  "extends": "@total-typescript/tsconfig/bundler/dom/library",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "outDir": "./dist",
+    "sourceMap": true,
+    "sourceRoot": "./src"
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.d.ts"],
+  "exclude": ["**/dist", "**/node_modules", "**/.*/"]
+}
