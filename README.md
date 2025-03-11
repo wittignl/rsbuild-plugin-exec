@@ -122,8 +122,8 @@ pluginExec({
 
 The following environment variables are automatically set for each subprocess:
 
-- `NODE_ENV`: Set to the current bundler type
-- `RSBUILD_ENV`: Set to the current environment name
+- `NODE_ENV`: Set to the same value RSBuild is using
+- `RSBUILD_ENV`: Set to the current environment name (RSBuild config)
 
 ## License
 
