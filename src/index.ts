@@ -183,6 +183,7 @@ function setupSignalHandlers(): void {
             finally {
 
                 globalPluginState.shutdownInProgress = false;
+                process.exit(0);
             }
         };
 
