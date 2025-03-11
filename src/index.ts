@@ -7,14 +7,14 @@ const RELEVANT_SIGNALS: NodeJS.Signals[] = ['SIGINT', 'SIGTERM'] as const;
 type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
-interface ExecCommandOptionsGeneratorOptions {
+export interface ExecCommandOptionsGeneratorOptions {
 
     stats?: Rspack.Stats;
     isFirstCompile: boolean;
     isWatch: boolean;
 }
 
-interface ExecCommandOptions {
+export interface ExecCommandOptions {
 
     command: string;
     args?: string[];
@@ -27,7 +27,7 @@ interface ExecCommandOptions {
     onlyOnWatch?: boolean;
 }
 
-interface ExecPluginOptions {
+export interface ExecPluginOptions {
 
     startDelay?: number;
 
