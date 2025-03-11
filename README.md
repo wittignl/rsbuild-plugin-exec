@@ -81,10 +81,12 @@ pluginExec({
 
 ```typescript
 pluginExec({
-  production: () => ({
-    command: 'vercel',
-    args: ['deploy']
-  })
+    environments: {
+        production: () => ({
+            command: 'vercel',
+            args: ['deploy']
+        })
+    }
 })
 ```
 
