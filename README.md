@@ -1,6 +1,6 @@
 # RSBuild Plugin Exec
 
-A plugin for RSBuild that executes commands after successful compilation. Particularly useful for automatically restarting your development server when files change.
+A plugin for RSBuild that executes commands after successful compilation. Particularly useful for automatically restarting your scripts when developing for node and files change.
 
 ## Features
 
